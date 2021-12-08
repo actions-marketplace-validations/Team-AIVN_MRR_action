@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import exiftool
 import json
 import os
@@ -31,7 +33,8 @@ def main(args):
                     mrn = f.replace("_", ":").replace(".txt", "")
                     map[mrn] = f"{baseUrl}{os.path.join(root, f)[1:]}"
                 mrn = None
-    print(json.dumps(map))
+    with open("mrn-map.json", "w") as f:
+        json.dump(map, f)
 
 if __name__ == "__main__":
     main(sys.argv)

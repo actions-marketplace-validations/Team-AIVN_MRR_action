@@ -1,0 +1,22 @@
+name: 'generate-mrn-map'
+description: 'Generates a JSON file containing a key-value mapping from MRN to document URL'
+branding:
+  icon: 'book-open'
+  color: 'blue'
+inputs:
+  path-to-root:
+    description: 'The path to the root of the repo'
+    required: false
+    default: '.'
+  base-url-path:
+    description: 'The base raw content URL of this repo'
+    required: true
+outputs:
+  mrn-map:
+    description: 'The resulting MRN map'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - "${{ inputs.path-to-root }}"
+    - "${{ inputs.base-url-path }}"
