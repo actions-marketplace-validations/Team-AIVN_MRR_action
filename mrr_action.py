@@ -19,7 +19,6 @@ def main(args):
         for root, _, files in os.walk("."):
             for f in files:
                 if f.endswith(extensionsToInclude):
-                    print(os.path.join(root, f))
                     metadata = et.get_metadata(os.path.join(root, f))
                     if "XMP:Subject" in metadata:
                         mrn = metadata["XMP:Subject"]
