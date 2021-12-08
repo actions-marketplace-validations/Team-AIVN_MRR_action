@@ -35,6 +35,7 @@ def main(args):
                 mrn = None
     with open("mrn-map.json", "w") as f:
         json.dump(map, f)
+    print(f"::set-output name=mrn-map::{os.getcwd()}/mrn-map.json")
 
 if __name__ == "__main__":
     main(sys.argv)

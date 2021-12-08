@@ -16,4 +16,4 @@ COPY mrr_action.py .
 
 RUN chmod +x mrr_action.py
 
-ENTRYPOINT [ "./mrr_action.py" ]
+ENTRYPOINT [ "/usr/src/app/mrr_action.py" ]
